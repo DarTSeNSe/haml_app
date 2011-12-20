@@ -1,0 +1,17 @@
+-#<DOCTYPE haml>
+%html
+%head
+  %title HamlApp
+  = stylesheet_link_tag 'blueprint/screen', :media => 'screen'
+  = stylesheet_link_tag 'blueprint/print',  :media => 'print'
+  = stylesheet_link_tag 'custom', :media => 'screen'
+  = javascript_include_tag "application"
+  = csrf_meta_tags
+
+%body
+  #header
+    = render :partial => "layouts/header"
+    .container
+      = yield
+  #footer
+    = render :partial => "layouts/footer"
